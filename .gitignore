@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+
+# Ignore generated outputs
+images/regenerated_watermarks/
+
+# Allow image inputs
+!images/
+!images/**/*.jpg
+!images/**/*.png
