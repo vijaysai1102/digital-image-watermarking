@@ -25,11 +25,51 @@ The project demonstrates concepts from digital image processing, security, and m
 ---
 
 ## Project Structure
-- **Watermark Generation:** Embeds watermark into the original image
-- **Master Share Generation:** Creates secure master shares for verification
-- **Ownership Share Generation:** Extracts ownership-related watermark data
-- **Template Matching:** Verifies watermark presence in stolen or altered images
-- **Image Assets:** Stores original, watermarked, stolen, and regenerated images
+
+```
+Digital-Watermarking-main/
+├── Code/
+│   ├── watermark_generator.py
+│   │   └── Embeds a watermark into the original image using XOR operations
+│   │       and random point selection for secure embedding
+│   │
+│   ├── master_share_generator.py
+│   │   └── Generates master shares for watermark verification by creating
+│   │       secure shares based on image gradients and thresholding
+│   │
+│   ├── owernership_share_generator.py
+│   │   └── Extracts ownership-related watermark data and generates
+│   │       ownership verification shares
+│   │
+│   └── template_match_res.py
+│       └── Performs template matching to verify watermark presence in
+│           stolen, modified, or regenerated images
+│
+├── images/
+│   ├── master_images/
+│   │   └── Original images used for watermarking
+│   │
+│   ├── stolen_images/
+│   │   └── Simulated stolen/modified images for testing
+│   │
+│   └── regenerated_watermarks/
+│       └── Extracted and regenerated watermarks from stolen images
+│
+├── README.md
+│   └── Project documentation and usage guide
+│
+└── .gitignore
+    └── Git ignore configuration
+```
+
+### Key Components
+
+| Component | Purpose | Input | Output |
+|-----------|---------|-------|--------|
+| **Watermark Generator** | Embeds watermark into images | Original image, Watermark data | Watermarked image |
+| **Master Share Generator** | Creates verification shares | Watermarked image | Master shares |
+| **Ownership Share Generator** | Extracts ownership data | Watermarked image | Ownership shares |
+| **Template Matcher** | Verifies ownership | Stolen image, Template | Matching confidence score |
 
 ---
 
